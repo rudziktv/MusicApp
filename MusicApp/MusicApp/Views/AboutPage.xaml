@@ -45,9 +45,12 @@
                        FontSize="Subtitle"
                        FontAttributes="Bold"/>
             </StackLayout>
+            <ScrollView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left"/>
+            </ScrollView.GestureRecognizers>
         </ScrollView>
 
-        <StackLayout Orientation="Horizontal" Grid.Row="2" BackgroundColor="#1e1f1f" Padding="5">
+        <StackLayout IsVisible="True" Orientation="Horizontal" Grid.Row="2" BackgroundColor="#1e1f1f" Padding="5">
             <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
                 <Label Text="SongTitle"/>
                 <Label Text="Author"

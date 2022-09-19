@@ -10,6 +10,7 @@ namespace MusicApp.Views
         public AboutPage()
         {
             InitializeComponent();
+
         }
     }
 }

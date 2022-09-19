@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MusicApp.ViewModels"
+             x:Class="MusicApp.Views.LibraryPage"
+             BackgroundColor="#121212"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.BindingContext>
+        <vm:LibraryViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to LibraryPage"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Right" Command="{Binding FavPageCommand}"/>
+            </StackLayout.GestureRecognizers>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
