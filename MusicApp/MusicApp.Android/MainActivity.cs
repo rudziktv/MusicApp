@@ -7,6 +7,7 @@ using Android.OS;
 using AndroidX.Core.App;
 using AndroidX.Core.Content;
 using Android;
+using MediaManager;
 
 namespace MusicApp.Droid
 {
@@ -23,7 +24,7 @@ namespace MusicApp.Droid
                     RequestPermission();
                 }
             }
-
+            CrossMediaManager.Current.Init(this);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

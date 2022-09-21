@@ -8,8 +8,33 @@
         <vm:PlayerViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
+            <Slider Value="{Binding ElapsedTime, Mode=TwoWay}" DragCompletedCommand="{Binding TimelineCommand}"/>
+            <Entry Placeholder="Href" Text="{Binding HrefInput}"/>
+            <Button Text="Download From Href" Command="{Binding DownloadSongCommand}"/>
             <Button Text="PLAY/PAUSE" Command="{Binding PlayPauseCommand}"/>
+            <Label Text="{Binding SongTitle}"
+                   HorizontalOptions="CenterAndExpand"
+                   LineBreakMode="TailTruncation"
+                   MaxLines="1"
+                   FontSize="Title"
+                   FontAttributes="Bold"/>
+            <Label Text="{Binding SongAuthor}"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Gray"/>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="CenterAndExpand">
+                <ImageButton Source="skip_back_line.png"
+                         HeightRequest="48"
+                         BackgroundColor="Transparent"/>
+                <ImageButton Source="{Binding PlayIconPath}"
+                         HeightRequest="48"
+                         BackgroundColor="Transparent"
+                             Command="{Binding PlayPauseCommand}"/>
+                <ImageButton Source="skip_forward_line.png"
+                         HeightRequest="48"
+                         BackgroundColor="Transparent"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

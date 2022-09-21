@@ -17,6 +17,10 @@
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{DynamicResource Text}"/>
             </Style>
+            <Style TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="Gray"/>
+                <Setter Property="TextColor" Value="{StaticResource Text}"/>
+            </Style>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
@@ -24,7 +28,7 @@
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{DynamicResource Secondary}" />
+                                    <Setter Property="BackgroundColor" Value="{DynamicResource Primary}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
