@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MusicApp.ViewModels"
+             x:Class="MusicApp.Views.PlayerPage"
+             BackgroundColor="#121212">
+    <ContentPage.BindingContext>
+        <vm:PlayerViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="PLAY/PAUSE" Command="{Binding PlayPauseCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

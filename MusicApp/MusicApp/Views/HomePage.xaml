@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MusicApp.Views.HomePage"
+             xmlns:local="clr-namespace:MusicApp.Views"
              xmlns:vm="clr-namespace:MusicApp.ViewModels"
              BackgroundColor="#121212"
              Shell.NavBarIsVisible="False">
@@ -19,15 +20,16 @@
             <StackLayout Orientation="Horizontal" BackgroundColor="#1e1f1f" Padding="5">
                 <StackLayout>
                     <Label Text="MusicApp"
-                       FontAttributes="Bold"
-                       VerticalOptions="CenterAndExpand"/>
+                           FontAttributes="Bold"
+                           VerticalOptions="CenterAndExpand"
+                           FontSize="Subtitle"/>
                 </StackLayout>
                 <StackLayout HorizontalOptions="EndAndExpand" Orientation="Horizontal">
                     <ImageButton Source="search_line.png"
-                         HeightRequest="25"
+                         HeightRequest="35"
                          BackgroundColor="Transparent"/>
                     <ImageButton Source="account_circle_line.png"
-                         HeightRequest="25"
+                         HeightRequest="35"
                          BackgroundColor="Transparent"/>
                 </StackLayout>
             </StackLayout>
@@ -43,7 +45,7 @@
                 </StackLayout>
             </ScrollView>
 
-            <StackLayout IsVisible="True" Orientation="Horizontal" Grid.Row="2" BackgroundColor="#1e1f1f" Padding="5">
+            <StackLayout InputTransparent="False" IsVisible="True" Orientation="Horizontal" Grid.Row="2" BackgroundColor="#1e1f1f" Padding="5">
                 <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
                     <Label Text="SongTitle"/>
                     <Label Text="Author"
@@ -52,15 +54,18 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                     <ImageButton Source="star_line.png"
-                         HeightRequest="20"
+                         HeightRequest="30"
                          BackgroundColor="Transparent"/>
                     <ImageButton Source="play_line.png"
-                         HeightRequest="25"
+                         HeightRequest="35"
                          BackgroundColor="Transparent"/>
                     <ImageButton Source="skip_forward_line.png"
-                         HeightRequest="25"
+                         HeightRequest="35"
                          BackgroundColor="Transparent"/>
                 </StackLayout>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding PlayerCommand}"/>
+                </StackLayout.GestureRecognizers>
             </StackLayout>
             
         </Grid>

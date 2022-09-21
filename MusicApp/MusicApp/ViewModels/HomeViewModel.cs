@@ -10,11 +10,17 @@ namespace MusicApp.ViewModels
     internal class HomeViewModel : BaseViewModel
     {
         public ICommand FavPageCommand { get; set; }
+        public ICommand PlayerCommand { get; set; }
 
         public HomeViewModel()
         {
             FavPageCommand = new Command(FavPage);
-            
+            PlayerCommand = new Command(Player);
+        }
+
+        private async void Player(object obj)
+        {
+            await Shell.Current.GoToAsync(nameof(PlayerPage));
         }
 
         private async void FavPage(object obj)

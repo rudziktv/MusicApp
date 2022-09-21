@@ -30,8 +30,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Home" Icon="home_line.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
-        <ShellContent Title="Favourite" Icon="star_line.png" Route="FavPage" ContentTemplate="{DataTemplate local:FavouritePage}" />
+        <ShellContent Title="Home" Icon="home_line.png" Route="HomePage" ContentTemplate="{DataTemplate local:TabbedPage1}" />
+        <ShellContent Title="Favourite" Icon="star_line.png" Route="PlayerPage" ContentTemplate="{DataTemplate local:PlayerPage}" />
         <ShellContent Title="Library" Icon="playlist_line.png" Route="LibPage" ContentTemplate="{DataTemplate local:LibraryPage}" />
     </TabBar>
 
@@ -41,6 +41,7 @@
     -->
     <TabBar>
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        
     </TabBar>
 
 

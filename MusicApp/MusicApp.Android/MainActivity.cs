@@ -4,6 +4,9 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using AndroidX.Core.App;
+using AndroidX.Core.Content;
+using Android;
 
 namespace MusicApp.Droid
 {
@@ -13,6 +16,13 @@ namespace MusicApp.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            {
+                if (!(CheckPermissionGranted(Manifest.Permission.ReadExternalStorage) && !CheckPermissionGranted(Manifest.Permission.WriteExternalStorage)))
+                {
+                    RequestPermission();
+                }
+            }
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -23,6 +33,24 @@ namespace MusicApp.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        private void RequestPermission()
+        {
+            ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.ReadExternalStorage, Manifest.Permission.WriteExternalStorage }, 0);
+        }
+
+        public bool CheckPermissionGranted(string Permissions)
+        {
+            // Check if the permission is already available.
+            if (ActivityCompat.CheckSelfPermission(this, Permissions) != Permission.Granted)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

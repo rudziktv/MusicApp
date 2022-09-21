@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="MusicApp.Views.TabbedPage1"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:local="clr-namespace:MusicApp.Views"
+            android:TabbedPage.OffscreenPageLimit="2"
+            android:TabbedPage.IsSwipePagingEnabled="true"
+            Shell.NavBarIsVisible="False"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            BarBackgroundColor="#222223"
+            SelectedTabColor="White"
+            UnselectedTabColor="Gray"
+            Shell.TabBarIsVisible="False">
+  <!--Pages can be added as references or inline-->
+    <local:HomePage Title="Home" IconImageSource="home_line.png"/>
+    <local:PlayerPage Title="Favourite" IconImageSource="star_line.png"/>
+    <local:LibraryPage Title="Library" IconImageSource="playlist_line.png" />
+</TabbedPage>
